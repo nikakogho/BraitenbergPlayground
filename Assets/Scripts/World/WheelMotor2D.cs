@@ -16,15 +16,21 @@ namespace World
         internal Motor CoreMotor { get; private set; }
         private Rigidbody2D _vehicleRb;
 
+        private bool _isInit;
+
         public void Init(Rigidbody2D vehicleRb)
         {
+            if (_isInit) return;
+
+            _isInit = true;
+
             _vehicleRb = vehicleRb;
             CoreMotor = new Motor();
         }
 
         private void FixedUpdate()
         {
-            if (_vehicleRb == null) return; // not initialised yet
+            if (!_isInit) return;
 
             var worldDir = transform.TransformDirection(localForceDir).normalized;
             var force = worldDir * (CoreMotor.Power * maxForce);

@@ -15,7 +15,9 @@ namespace Core
 
         public void TransmitPower()
         {
-            _to.SetPower(_from.Value * _gain);
+            var power = _from.Value * _gain;
+
+            _to.SetPower(power);
         }
     }
 }

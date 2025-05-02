@@ -1,19 +1,12 @@
-using UnityEngine;
-
 namespace Core
 {
-    public class Motor : MonoBehaviour
+    public sealed class Motor
     {
-        // Start is called before the first frame update
-        void Start()
+        public float Power { get; private set; }
+
+        public void SetPower(float power)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            Power = power;
         }
     }
 }

@@ -1,0 +1,23 @@
+# ────────────── Tests/.gitignore ──────────────
+# Ignore all compiled output
+bin/
+obj/
+
+# VS & Rider temp files
+.vs/
+.idea/
+
+# dotnet test run artifacts
+TestResults/
+
+# User-specific IDE configs
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+
+# Coverage & analyzer caches (if you enable later)
+coverage*
+*.codecov
+*.sonarqube/
+# ───────────────────────────────────────────────

@@ -23,16 +23,16 @@ namespace World
             _vehicle = new Vehicle();
 
             // Build Core object graph
-            foreach (var row in wires)
+            foreach (var wireConfig in wires)
             {
-                _vehicle.AddSensor(row.sensor.CoreSensor);
-                row.motor.Init(_rb);
+                _vehicle.AddSensor(wireConfig.sensor.CoreSensor);
+                wireConfig.motor.Init(_rb);
 
-                var w = new Wire(row.sensor.CoreSensor,
-                                 row.motor.CoreMotor,
-                                 row.gain);
+                var wire = new Wire(wireConfig.sensor.CoreSensor,
+                                 wireConfig.motor.CoreMotor,
+                                 wireConfig.gain);
 
-                _vehicle.AddWire(w);
+                _vehicle.AddWire(wire);
             }
         }
 

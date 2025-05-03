@@ -31,7 +31,7 @@ Braitenberg’s book shows how **tiny wiring tweaks** create wildly different pe
 Each prefab in `/Assets/Prefabs/` is a *chapter* in that story — no extra scripts, just different sensor→motor hookups.
 
 ### Vehicle 01 – “The Thermophile”
-* **Scene:** `Assets/Scenes/Vehicle1Demo.unity`
+* **Scene:** `Assets/Scenes/Vehicle 1 Demo.unity`
 * **Wiring:** 1 light sensor ➜ 1 wheel (**gain = +1**)
 * **Behaviour:** Sits still in the dark, crawls in dim light, and rockets forward under a bright lamp.  
   To the casual observer it *“likes warmth.”*

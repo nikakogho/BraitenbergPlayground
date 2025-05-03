@@ -33,8 +33,9 @@ namespace World
             if (!_isInit) return;
 
             var worldDir = transform.TransformDirection(localForceDir).normalized;
-            var force = worldDir * (CoreMotor.Power * maxForce);
-            _vehicleRb.AddForceAtPosition(force, transform.position, ForceMode2D.Force);
+            var velocity = worldDir * (CoreMotor.Power * maxForce);
+
+            _vehicleRb.velocity = velocity;
         }
     }
 }

@@ -6,7 +6,7 @@ Live demo → **GitHub Pages** (eventually will be auto-built on every push).
 Tweak one-to-one sensor-motor wires and watch complex behaviour emerge.
 
 ## Why
-To question the boundary between living beings and machines by showing how simple wiring can give rise to behaviors we use as proof of life and min
+To question the boundary between living beings and machines by showing how simple wiring can give rise to behaviors we use as proof of life and mind
 
 ## Quick start
 ```bash

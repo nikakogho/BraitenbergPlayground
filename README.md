@@ -45,7 +45,7 @@ _Run the scene, press **L** to show the sensor rays, and drag the yellow suns ar
 
 | Prefab | Wiring (sensor → motor) | Gain | Sprite tint | Observed behaviour |
 |--------|-------------------------|------|-------------|--------------------|
-| **Vehicle 2a - Fear** (Coward) | Left ➜ Left<br>Right ➜ Right | **+1** | Yellow | Turns **away** from the lamp and accelerates while fleeing. |
+| **Vehicle 2a - Fear** | Left ➜ Left<br>Right ➜ Right | **+1** | Yellow | Turns **away** from the lamp and accelerates while fleeing. |
 | **Vehicle 2b - Aggressor** | Left ➜ Right<br>Right ➜ Left | **+1** | Red | Curves **toward** the lamp and accelerates straight through it. |
 
 *Spawn a creature, drag the yellow lamp, press **L** to toggle vision rays.*

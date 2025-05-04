@@ -31,7 +31,8 @@ Braitenberg’s book shows how **tiny wiring tweaks** create wildly different pe
 Each prefab in `/Assets/Prefabs/` is a *chapter* in that story — no extra scripts, just different sensor→motor hookups.
 
 ### Vehicle 01 – “The Thermophile”
-* **Scene:** `Assets/Scenes/Vehicle 1 Demo.unity`
+* **Scene:** `Assets/Scenes/Vehicle Demos/Vehicle 1 Demo.unity`
+* **Prefab:** **Vehicle 1 - Light seeker**
 * **Wiring:** 1 light sensor ➜ 1 wheel (**gain = +1**)
 * **Behaviour:** Sits still in the dark, crawls in dim light, and rockets forward under a bright lamp.  
   To the casual observer it *“likes warmth.”*
@@ -41,7 +42,7 @@ _Run the scene, press **L** to show the sensor rays, and drag the yellow suns ar
 ---
 
 ### Vehicle 02 – Fear & Aggression  
-**Scene:** `Assets/Scenes/Vehicle 2 Demo.unity`
+**Scene:** `Assets/Scenes/Vehicle Demos/Vehicle 2 Demo.unity`
 
 | Prefab | Wiring (sensor → motor) | Gain | Sprite tint | Observed behaviour |
 |--------|-------------------------|------|-------------|--------------------|
@@ -53,7 +54,7 @@ _Run the scene, press **L** to show the sensor rays, and drag the yellow suns ar
 ---
 
 ### Vehicle 03 – Love & Exploration  
-**Scene:** `Assets/Scenes/Vehicle 3 Demo.unity`
+**Scene:** `Assets/Scenes/Vehicle Demos/Vehicle 3 Demo.unity`
 
 | Prefab | Wiring | Gain | Sprite tint | Observed behaviour |
 |--------|--------|------|-------------|--------------------|

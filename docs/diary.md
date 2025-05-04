@@ -43,3 +43,23 @@
 
 - **README updated.**  
   Vehicle catalogue now includes Fear & Love with wiring table, colour legend, scene name, and usage tips.
+
+---
+
+## 2025-05-04 (afternoon) – Chapter-2 names fixed, Chapter-3 added
+
+* **Renamed and rewired Chapter 2.**  
+  *Blue Fear* (same-side +gain) and *Red Aggressor* (cross +gain) now match the book.
+
+* **Implemented Chapter 3 vehicles.**  
+  *Orange Love* (same-side –gain) slows as it nears the lamp.  
+  *Green Explorer* (cross –gain with higher baseline) roams the mid-light.
+
+* **Demo scenes updated.**  
+  Vehicle 2 Demo spawns Fear or Aggressor at random pads.  
+  Vehicle 3 Demo spawns Love or Explorer, includes two static lamps plus a draggable one.
+
+* **Motor clamp bug fixed.**  
+  Wheel power is now `max(0, baseline + wires)` so inhibitory wiring never drives wheels backward.
+
+* **README brought in line with textbook terminology.**

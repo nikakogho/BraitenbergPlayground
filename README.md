@@ -40,16 +40,24 @@ _Run the scene, press **L** to show the sensor rays, and drag the yellow suns ar
 
 ---
 
-### Vehicle 02 – “Fear & Love”  
+### Vehicle 02 – Fear & Aggression  
 **Scene:** `Assets/Scenes/Vehicle 2 Demo.unity`
 
-| Prefab | Wiring | Sprite tint | What you’ll see |
-|--------|--------|-------------|-----------------|
-| **Vehicle_2A_Fear** | Left sensor ➜ Left wheel (+1)<br>Right sensor ➜ Right wheel (+1) | Yellow | Turns **away** from the lamp and *accelerates* while fleeing. |
-| **Vehicle_2B_Love** | Left sensor ➜ Right wheel (+1)<br>Right sensor ➜ Left wheel (+1) | Red | Curves **toward** the lamp, speeding up until it crashes into it. |
+| Prefab | Wiring (sensor → motor) | Gain | Sprite tint | Observed behaviour |
+|--------|-------------------------|------|-------------|--------------------|
+| **Vehicle 2a - Fear** (Coward) | Left ➜ Left<br>Right ➜ Right | **+1** | Yellow | Turns **away** from the lamp and accelerates while fleeing. |
+| **Vehicle 2b - Aggressor** | Left ➜ Right<br>Right ➜ Left | **+1** | Red | Curves **toward** the lamp and accelerates straight through it. |
 
-**How to play**
+*Spawn a creature, drag the yellow lamp, press **L** to toggle vision rays.*
 
-* Hit **Spawn Fear** or **Spawn Love** — the creature appears at one of the preset pads chosen at random.  
-* **Drag** the yellow lamp sprite around: yellow cart flees, red cart chases.  
-* Press **L** at any time to toggle the vision-cone rays.
+---
+
+### Vehicle 03 – Love & Exploration  
+**Scene:** `Assets/Scenes/Vehicle 3 Demo.unity`
+
+| Prefab | Wiring | Gain | Sprite tint | Observed behaviour |
+|--------|--------|------|-------------|--------------------|
+| **Vehicle 3a - Love** | Left ➜ Left<br>Right ➜ Right | **–1** | Orange | Approaches the lamp but **slows down** as it closes in, then bumps gently. |
+| **Vehicle 3b - Explorer** | Left ➜ Right<br>Right ➜ Left | **–1** | Green | Turns **away** from bright spots yet drifts in mid-light zones—looks curious. |
+
+*Both vehicles include a small tonic motor baseline; wheels never reverse (power is clamped ≥ 0).*

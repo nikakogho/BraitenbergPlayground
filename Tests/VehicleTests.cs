@@ -15,8 +15,8 @@ namespace Tests
             // Sensors read from captured variables
             var sL = new Sensor(() => leftLight);
             var sR = new Sensor(() => rightLight);
-            var mL = new Motor();
-            var mR = new Motor();
+            var mL = new Motor(0);
+            var mR = new Motor(0);
 
             v.AddSensor(sL);
             v.AddSensor(sR);

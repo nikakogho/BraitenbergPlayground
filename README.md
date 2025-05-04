@@ -37,3 +37,19 @@ Each prefab in `/Assets/Prefabs/` is a *chapter* in that story — no extra scri
   To the casual observer it *“likes warmth.”*
 
 _Run the scene, press **L** to show the sensor rays, and drag the yellow suns around to feel the speed scaling._
+
+---
+
+### Vehicle 02 – “Fear & Love”  
+**Scene:** `Assets/Scenes/Vehicle 2 Demo.unity`
+
+| Prefab | Wiring | Sprite tint | What you’ll see |
+|--------|--------|-------------|-----------------|
+| **Vehicle_2A_Fear** | Left sensor ➜ Left wheel (+1)<br>Right sensor ➜ Right wheel (+1) | Yellow | Turns **away** from the lamp and *accelerates* while fleeing. |
+| **Vehicle_2B_Love** | Left sensor ➜ Right wheel (+1)<br>Right sensor ➜ Left wheel (+1) | Red | Curves **toward** the lamp, speeding up until it crashes into it. |
+
+**How to play**
+
+* Hit **Spawn Fear** or **Spawn Love** — the creature appears at one of the preset pads chosen at random.  
+* **Drag** the yellow lamp sprite around: yellow cart flees, red cart chases.  
+* Press **L** at any time to toggle the vision-cone rays.

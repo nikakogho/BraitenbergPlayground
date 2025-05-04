@@ -7,9 +7,9 @@ namespace Tests
         [Fact]
         public void SetPower_StoresValue()
         {
-            var m = new Motor();
+            var m = new Motor(0.1f);
             m.SetPower(0.75f);
-            Assert.Equal(0.75f, m.Power);
+            Assert.Equal(0.85f, m.Power);
         }
     }
 }

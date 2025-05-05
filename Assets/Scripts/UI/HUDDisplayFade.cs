@@ -18,8 +18,15 @@ namespace World.UI
             {
                 float k = 1 - (_t - holdSeconds) / fadeSeconds;
                 _tmp.alpha = Mathf.Clamp01(k);
-                if (k <= 0) Destroy(gameObject);
+                if (k <= 0) gameObject.SetActive(false);
             }
+        }
+
+        public void ResetHUD()
+        {
+            _t = 0;
+            _tmp.alpha = 1;
+            gameObject.SetActive(true);
         }
     }
 }

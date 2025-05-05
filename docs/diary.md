@@ -63,3 +63,7 @@
   Wheel power is now `max(0, baseline + wires)` so inhibitory wiring never drives wheels backward.
 
 * **README brought in line with textbook terminology.**
+
+## 2025-05-05
+
+* Setup combined demo of vehicles 2 and 3 and can now reset HUD

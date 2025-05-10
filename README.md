@@ -62,3 +62,22 @@ _Run the scene, press **L** to show the sensor rays, and drag the yellow suns ar
 | **Vehicle 3b - Explorer** | Left ➜ Right<br>Right ➜ Left | **–1** | Green | Turns **away** from bright spots yet drifts in mid-light zones—looks curious. |
 
 *Both vehicles include a small tonic motor baseline; wheels never reverse (power is clamped ≥ 0).*
+
+---
+
+### Vehicle 04 - we skip because it's a repetition on 03
+
+---
+
+### Vehicle 05 – Logic Gates  
+**Scene:** `Assets/Scenes/Vehicle Demos/Vehicle 5 Logic Demo.unity`
+
+| Prefab | Wiring type | Gate logic | Sprite tint | Observed behaviour |
+|--------|-------------|------------|-------------|--------------------|
+| **Vehicle 5 AND** | 2 sensors ➜ 1 threshold unit ➜ thruster | Fires if **both eyes** bright | Red | Stays still unless both lamps shine in; then darts forward. |
+| **Vehicle 5 OR** | 2 sensors ➜ 1 threshold unit ➜ thruster | Fires if **either eye** bright | Orange | Launches as soon as *any* lamp lights one eye. |
+| **Vehicle 5 NAND** | Inhibitory wiring ➜ threshold ➜ thruster | Fires if **not both** eyes are bright | Purple | Moves in partial shade, stalls in full glare. |
+| **Vehicle 5 XOR** | Sensor ➜ OR and AND ➜ XOR | Fires if **exactly one** eye sees light | Cyan | Moves only in **01** or **10** configurations. |
+
+*All vehicles are powered by a pure-C# neural microcircuit.  
+You can extend them with more logic layers or feedback by adding more units in the Inspector.*

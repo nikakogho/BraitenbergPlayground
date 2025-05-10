@@ -67,3 +67,19 @@
 ## 2025-05-05
 
 * Setup combined demo of vehicles 2 and 3 and can now reset HUD
+
+---
+
+## 2025-05-10
+
+Logic gates now fully supported.
+ThresholdUnit introduced as a stageable logic node. Vehicles can now do AND, OR, NAND, XOR via wiring alone.
+
+Rewrote Vehicle engine loop.
+One-pass tick system allows any-direction wiring: feedforward, feedback, even recurrent loops.
+
+Prefab library updated.
+Vehicle5a–5d created for all four logic gates. Central-thruster design with colored tints for clarity.
+
+LogicArena scene added.
+Four pad inputs simulate binary inputs (00/01/10/11). Visualizes gate truth tables with a single click—no dragging required.

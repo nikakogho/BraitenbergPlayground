@@ -1,23 +1,25 @@
+using System;
+
 namespace Core
 {
     public sealed class Wire
     {
-        private readonly Sensor _from;
-        private readonly Motor _to;
-        private readonly float _gain;
+        private readonly Func<float> _input;
+        private readonly Action<float> _output;
+        private readonly float _weight;
 
-        public Wire(Sensor from, Motor to, float gain = 1f)
+        public Wire(Func<float> input, Action<float> output, float weight)
         {
-            _from = from;
-            _to = to;
-            _gain = gain;
+            _input = input;
+            _output = output;
+            _weight = weight;
         }
 
         public void TransmitPower()
         {
-            var power = _from.Value * _gain;
+            var power = _input() * _weight;
 
-            _to.SetPower(power);
+            _output(power);
         }
     }
 }

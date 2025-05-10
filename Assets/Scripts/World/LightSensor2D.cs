@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Core;
 
 namespace World
@@ -30,8 +30,9 @@ namespace World
 
         private float SampleLight()
         {
-            float best = 0f;
-            const float bias = 0.02f;
+            float best = 0f;                                   // keep the brightest ray
+            const float epsilon = 0.001f;                      // avoids divide-by-0
+            float bestDist = float.MaxValue;
 
             for (int i = 0; i < rays; i++)
             {
@@ -40,36 +41,31 @@ namespace World
                 Vector2 dir = Quaternion.Euler(0, 0, angle) * transform.up;
 
                 if (showRays)
-                {
-                    Debug.DrawLine(transform.position,
-                                   transform.position + (Vector3)(dir * sampleRange),
-                                   gizmoColor,         // yellow, or your field
-                                   0f,                 // duration, 0 = 1 frame
-                                   false);             // don't depth-test
-                }
+                    Debug.DrawRay(transform.position, dir * sampleRange, gizmoColor, 0f, false);
 
-                Vector2 origin = (Vector2)transform.position + dir * bias;
+                int hitCount = Physics2D.RaycastNonAlloc(transform.position,
+                                                         dir,
+                                                         _hits,
+                                                         sampleRange,
+                                                         lightLayer);
+                if (hitCount == 0) continue;
 
-                int n = Physics2D.RaycastNonAlloc(origin,
-                                                  dir,
-                                                  _hits,
-                                                  sampleRange,
-                                                  lightLayer);
-                if (n == 0) continue;
+                float d = Mathf.Max(epsilon, _hits[0].distance);     // 0 → ε so intensity = 1
 
-                var hit = _hits[0];
-                float d = hit.distance;
-                float intrinsic = 1f; // default if no script
+                float intrinsic = 1f;
+                if (_hits[0].collider.TryGetComponent(out LightEmitter2D emitter))
+                    intrinsic = emitter.brightness;
 
-                var emitter = hit.collider.GetComponent<LightEmitter2D>();
-                if (emitter) intrinsic = emitter.brightness;
+                // linear fall-off: 1 at d = 0, 0 at d = sampleRange
 
-                // linear fall-off, clamp 0..1
-                float intensity = intrinsic * (1f - Mathf.Clamp01(d / sampleRange));
+                float intensity = intrinsic * Mathf.Clamp01(1f - d / sampleRange);
+
+                if (d < bestDist) bestDist = d;
+
                 best = Mathf.Max(best, intensity);
             }
 
-            return best;
+            return best;      // 0 (no light) … 1 (lamp right on the sensor)
         }
 
 

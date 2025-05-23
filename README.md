@@ -25,6 +25,10 @@ These four plain-C# classes contain **all decision-making**; they never touch Un
 | **Wire** | Holds a **from Sensor**, **to Motor**, and a gain. `TransmitPower()` multiplies sensor `Value × gain` and sends it to the motor. | “One axon with adjustable synaptic weight.” |
 | **Vehicle** | Aggregates lists of Sensors and Wires. A `Tick()` samples *all* sensors, then propagates through *all* wires. | “Run the whole nervous system for this frame.” |
 
+## Main Menu
+`/Assets/Scenes/Main Menu.unity` has menu that lists all vehicle demos.
+We can enter a demo and then exit it any time by pressing the *Escape* button.
+
 ## 🚗 Vehicle catalogue – why multiple prefabs?
 
 Braitenberg’s book shows how **tiny wiring tweaks** create wildly different personalities.  

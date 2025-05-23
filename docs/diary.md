@@ -118,3 +118,7 @@ Four pad inputs simulate binary inputs (00/01/10/11). Visualizes gate truth tabl
 
 - New serialisable helpers: `PlasticWeight` (mutable gain) and `MnemotrixConfig : VehicleWireConfig`.  
   `VehicleBody` now processes a `mnemotrixWires` list (≈ 12 LoC patch, core engine untouched).
+
+## 2025-03-24 Added Main Menu
+
+Yeah just that

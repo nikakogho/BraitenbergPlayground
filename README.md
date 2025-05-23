@@ -8,7 +8,16 @@ Tweak one-to-one sensor-motor wires and watch complex behaviour emerge.
 ## Why
 To question the boundary between living beings and machines by showing how simple wiring can give rise to behaviors we use as proof of life and mind
 
-## Quick start
+## Release
+![Latest release](https://github.com/nikakogho/BraitenbergPlayground/releases/latest)
+
+> **Ready to play?**  
+> • Head to the **[Releases page]** and grab the ZIP for Windows (`BraitenbergPlayground-Win.zip`).  
+> • Unzip, run `BraitenbergPlayground.exe`, then pick a demo from the Main Menu.
+
+[Releases page]: https://github.com/NikaKogho/BraitenbergPlayground/releases
+
+## Local Quick start
 ```bash
 git clone https://github.com/NikaKogho/BraitenbergPlayground
 unity -projectPath BraitenbergPlayground

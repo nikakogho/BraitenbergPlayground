@@ -6,9 +6,6 @@ namespace Simulation
     public class VehicleSimulationManager : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _vehiclePrefab;
-
-        [SerializeField]
         private Transform _vehicleSpawnPointsParent;
 
         private List<GameObject> _spawnedVehicles = new List<GameObject>();

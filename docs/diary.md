@@ -98,3 +98,23 @@ Four pad inputs simulate binary inputs (00/01/10/11). Visualizes gate truth tabl
 - **4-gene genome for EvoVehicle**  Each vehicle 6 carries gains for LL, LR, RL, RR wires.
   Random founders display every textbook behaviour; selection quickly amplifies the ‘Aggressor’ pattern
   (cross-positive), demonstrating emergence from a common genetic substrate.
+
+## 2025-05-23 night – Chapter 7 “Pavlovian Conditioning”
+
+- **Vehicle 7 – Pavlovian** prefab finished.  
+  *Wiring summary*  
+  | Src → Dst | Kind | Gain | Purpose |
+  |-----------|------|------|---------|
+  | Left LightSensor → Unit Food | regular | **+1** | innate “see food” |
+  | Right LightSensor → Unit Food | regular | **+1** | — |
+  | Unit Food → Left Wheel | regular | **+1** | drive |
+  | Unit Food → Right Wheel | regular | **+1** | drive |
+  | **Key Bell → Unit Food** | **Mnemotrix** | PlasticWeight (0 → 1) | learned bell-food link |
+
+  - Two light sensors activate the **Food** threshold unit (τ = 0.7); Food drives *both* wheels.  
+  - A plastic Mnemotrix wire (Bell KeySensor → Food) starts silent; the first time bell & food fire together, its weight jumps to **1** and then **decays 5 % s⁻¹** if not reinforced.
+
+- **ConditioningArena** scene added: central lamp, on-screen hint “Press B to ring bell”.  Demo shows Pavlovian learning in < 30 s.
+
+- New serialisable helpers: `PlasticWeight` (mutable gain) and `MnemotrixConfig : VehicleWireConfig`.  
+  `VehicleBody` now processes a `mnemotrixWires` list (≈ 12 LoC patch, core engine untouched).

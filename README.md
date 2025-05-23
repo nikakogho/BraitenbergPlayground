@@ -85,7 +85,7 @@ You can extend them with more logic layers or feedback by adding more units in t
 ---
 
 ### Chapter 06 – Natural Selection Arena
-**Scene:** `Assets/Scenes/Evolutionary/Vehicle 6 - Selection Arena.unity`
+**Scene:** `Assets/Scenes/Vehicle Demos/Vehicle 6 - Selection Arena.unity`
 
 Demonstration of a simple genetic algorithm.
 A dozen clones of the EvoVehicle (new type) start with random sensor-to-motor weights.  
@@ -100,3 +100,22 @@ After a minute the population converges on big *positive* gains → all individu
 
 *Genome:* **4 floats** = gains for all four sensor→motor axons.  Natural selection sifts
 through Fear/Aggressor/Love/Explorer variants and settles on the survivor.
+
+### Chapter 07 – Concept Learning (Pavlov)
+
+**Prefab:** `Vehicle 7 – Conditioned`  
+**Scene:** `Assets/Scenes/Vehicle Demos/Vehicle 7 - Pavlov Arena.unity`
+
+| Element | Role |
+|---------|------|
+| **Bell (Key B)** | Fires when you press **B** |
+| **Food unit** | Threshold 0.7 node; lit sensors or (after learning) the bell activate it |
+| **Mnemotrix wire** | Stores its gain in a `PlasticWeight`: flips from 0 → 1 on the first bell + food coincidence, then drifts back toward 0 unless re-paired |
+
+**Walk-through**
+
+1. Shine the lamp on the vehicle (Food fires via light).  
+2. Press **B** several times – the bell coincides with food and the Mnemotrix link is learned.  
+3. Move the lamp away (dark).  
+4. Press **B** again – the bell alone now triggers Food → both wheels: a conditioned reflex.  
+5. Stop ringing for ~20 s – the link decays and the response fades (“forgetting”).

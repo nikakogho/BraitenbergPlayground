@@ -4,7 +4,7 @@ using Core;
 namespace World
 {
     [DisallowMultipleComponent]
-    public sealed class LightSensor2D : MonoBehaviour
+    public sealed class LightSensor2D : WorldSensor
     {
         public static bool showRays = false;
 
@@ -20,8 +20,6 @@ namespace World
 
         [Header("Gizmo")]
         public Color gizmoColor = Color.yellow;
-
-        public Sensor CoreSensor { get; private set; }
 
         // Allocated once for perf
         private readonly RaycastHit2D[] _hits = new RaycastHit2D[1];

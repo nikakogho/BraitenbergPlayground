@@ -2,7 +2,7 @@ namespace World
 {
     /// <summary>Represents ONE directed, weighted connection set in the Inspector.</summary>
     [System.Serializable]
-    public sealed class VehicleWireConfig
+    public class VehicleWireConfig
     {
         public enum SourceType { Sensor, ThresholdUnit }
         public enum TargetType { ThresholdUnit, Motor }
@@ -10,7 +10,7 @@ namespace World
         public SourceType sourceKind;
         public TargetType targetKind;
 
-        public LightSensor2D sensor;   // used if sourceKind == Sensor
+        public WorldSensor sensor;   // used if sourceKind == Sensor
         public ThresholdUnit2D unitSrc;  // used if sourceKind == ThresholdUnit
 
         public ThresholdUnit2D unitDst;  // used if targetKind == ThresholdUnit

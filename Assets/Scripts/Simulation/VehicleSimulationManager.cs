@@ -8,7 +8,7 @@ namespace Simulation
         [SerializeField]
         private Transform _vehicleSpawnPointsParent;
 
-        private List<GameObject> _spawnedVehicles = new List<GameObject>();
+        private readonly List<GameObject> _spawnedVehicles = new List<GameObject>();
 
         private Transform GetSpawnPoint()
         {

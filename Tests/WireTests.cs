@@ -9,7 +9,7 @@ namespace Tests
         {
             var s = new Sensor(() => 2f);
             var m = new Motor(0.1f);
-            var w = new Wire(s, m, gain: 0.3f);
+            var w = new Wire(s.SensingLogic, m.SetPower, weight: 0.3f);
 
             s.Sense(); // Value becomes 2
             w.TransmitPower();

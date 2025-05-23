@@ -20,8 +20,8 @@ namespace Tests
 
             v.AddSensor(sL);
             v.AddSensor(sR);
-            v.AddWire(new Wire(sL, mL, +1f));
-            v.AddWire(new Wire(sR, mR, +1f));
+            v.AddWire(new Wire(sL.SensingLogic, mL.SetPower, +1f));
+            v.AddWire(new Wire(sR.SensingLogic, mR.SetPower, +1f));
 
             leftLight = 1f; // pretend environment changed
             rightLight = 0.2f;

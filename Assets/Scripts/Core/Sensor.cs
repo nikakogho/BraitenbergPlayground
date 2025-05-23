@@ -4,17 +4,17 @@ namespace Core
 {
     public sealed class Sensor
     {
-        private readonly Func<float> _sensingLogic;
+        public readonly Func<float> SensingLogic;
         public float Value { get; private set; }
 
         public Sensor(Func<float> sensingLogic)
         {
-            _sensingLogic = sensingLogic;
+            SensingLogic = sensingLogic;
         }
 
         public float Sense()
         {
-            Value = _sensingLogic();
+            Value = SensingLogic();
 
             return Value;
         }

@@ -81,3 +81,22 @@ _Run the scene, press **L** to show the sensor rays, and drag the yellow suns ar
 
 *All vehicles are powered by a pure-C# neural microcircuit.  
 You can extend them with more logic layers or feedback by adding more units in the Inspector.*
+
+---
+
+### Chapter 06 – Natural Selection Arena
+**Scene:** `Assets/Scenes/Evolutionary/Vehicle 6 - Selection Arena.unity`
+
+Demonstration of a simple genetic algorithm.
+A dozen clones of the EvoVehicle (new type) start with random sensor-to-motor weights.  
+Whenever a creature tumbles off the edge (no more light ➜ drives straight into the void) the arena:
+
+1. Picks a **parent** proportional to time-alive.  
+2. Clones its genome with a ±10 % mutation per wire.  
+3. Spawns the baby back on the table.
+
+After a minute the population converges on big *positive* gains → all individuals hug the bright centre or spin in place, either way they rarely fall.  
+*Variation + differential survival = apparent design – without a designer.*
+
+*Genome:* **4 floats** = gains for all four sensor→motor axons.  Natural selection sifts
+through Fear/Aggressor/Love/Explorer variants and settles on the survivor.

@@ -12,7 +12,6 @@ namespace World
             if (Input.GetKeyDown(toggleKey))
             {
                 LightSensor2D.showRays = !LightSensor2D.showRays;
-                Debug.Log($"Sensor rays {(LightSensor2D.showRays ? "ON" : "OFF")}");
             }
         }
     }

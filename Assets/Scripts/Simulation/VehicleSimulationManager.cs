@@ -11,8 +11,6 @@ namespace Simulation
         [SerializeField]
         private Transform _vehicleSpawnPointsParent;
 
-        private GameObject _vehicle;
-
         private List<GameObject> _spawnedVehicles = new List<GameObject>();
 
         private Transform GetSpawnPoint()
@@ -24,13 +22,6 @@ namespace Simulation
             return spawnPoint;
         }
 
-        public void Spawn()
-        {
-            if (_vehicle != null) return;
-            var spawnPoint = GetSpawnPoint();
-            _vehicle = Instantiate(_vehiclePrefab, spawnPoint.position, spawnPoint.rotation);
-        }
-
         public void SpawnVehicle(GameObject prefab)
         {
             var spawnPoint = GetSpawnPoint();
@@ -39,11 +30,6 @@ namespace Simulation
 
         public void Reset()
         {
-            if (_vehicle != null)
-            {
-                Destroy(_vehicle);
-                _vehicle = null;
-            }
             foreach (var vehicle in _spawnedVehicles)
             {
                 Destroy(vehicle);

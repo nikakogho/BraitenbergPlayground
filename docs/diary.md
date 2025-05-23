@@ -83,3 +83,18 @@ Vehicle5a–5d created for all four logic gates. Central-thruster design with co
 
 LogicArena scene added.
 Four pad inputs simulate binary inputs (00/01/10/11). Visualizes gate truth tables with a single click—no dragging required.
+
+## 2025-05-23 – Chapter 6 “Selection Arena”
+
+- **Evolutionary playground implemented.**  
+  New `Vehicle 6 - Selection Arena` scene: brightly lit table, cliff-edge KillZone.  
+  *Population of 12* EvoVehicle (new vehicle described below) offspring roam; falling off the table counts as death.
+
+- **Genetic reproduction & mutation.**  
+  `VehicleGenome` + `SelectionArenaManager` clone a random vehicle (higher chance of picking the longer the vehicle has lived) when a vehicle dies, mutating its wire gains ±10%. Over a 60-s run you can watch the average lifetime rise, and in a few minutes they all develop tactics to stay alive. Observed tactics in multiple runs include spinning in place, keeping a distance like "Love" vehicle and aggressively smashing into the light zone like "aggressor"
+
+- **New scripts:** `VehicleGenome`, `VehicleLife`, `SelectionArenaManager`, `KillZone`, plus gain-getter/setter helpers on `VehicleBody`.
+
+- **4-gene genome for EvoVehicle**  Each vehicle 6 carries gains for LL, LR, RL, RR wires.
+  Random founders display every textbook behaviour; selection quickly amplifies the ‘Aggressor’ pattern
+  (cross-positive), demonstrating emergence from a common genetic substrate.
